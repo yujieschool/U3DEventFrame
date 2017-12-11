@@ -1,4 +1,4 @@
-# U3DEventFrame
+﻿# U3DEventFrame
 
 
 万能框架解决问题：
@@ -11,9 +11,9 @@
 
 
 注意事项：
- 1，得配一下python: 2.7 环境变量
- 2，Unity3d 用的是 5.6.2  框架是适合所有版本 资源可能需要改一下。
- 3，Lua 用的是 tolua 可以自行替换最新版本
+1，得配一下python: 2.7 环境变量
+2，Unity3d 用的是 5.6.2  框架是适合所有版本 资源可能需要改一下
+3，Lua 用的是 tolua 可以自行替换最新版本
 
 视频教程地址  www.yujieschool.com
 
