@@ -1,0 +1,506 @@
+package proto;
+option java_package = "com.fish.protobuf";
+option java_outer_classname = "FishProto";
+
+
+//渠道登录 enterChannelHandler
+message request1000
+{
+    required int32 handlerId=5;
+	required string Channel = 1;
+	required string ext1 = 2;
+    optional string ext2 = 3;
+	optional string ext3 = 4;
+
+}
+
+message response1000
+{
+
+    required string token = 1;
+	required int32 ishaveRolename = 2; //是否创建角色 0没有 1有
+	optional string accesstoken = 3;
+}
+//--------------------------------------------------------------
+//创建角色 createRoleHandler
+message request1001
+{
+required int32 handlerId=4;
+required string token = 1;
+required string rolename=2;
+required int32 sex=3;
+}
+//心跳 keepLiveHandler
+message request1002
+{
+required int32 handlerId=2;
+required string token=1;
+}
+//更新角色信息  updateUserHandler
+// flag 1更新全部信息 2角色信息 3水族箱信息 4水族箱饰品 5装备 6鱼 7宝石8道具9饰品 (多个更新分隔有"," 比如更新角色信息+鱼的信息 flag=2,6)
+message request1003
+{
+ required int32 handlerId=3;
+required string token=1;
+required string flag=2;//标签值
+}
+message responsetest{
+required string uid=1;//用户唯一id
+}
+message response1003
+{
+required string uid=1;//用户唯一id
+optional RoleInfo roleInfo=2;//角色信息
+repeated RoleAquarium roleAquarium=3;//水族箱
+repeated RoleDecoration roleDecoration=4;//水族箱饰品
+repeated RoleEquip roleEquip=5;//装备
+repeated RoleGem roleGem=6;//宝石
+repeated RoleItem roleItem=7;//道具
+repeated RoleOrnament roleOrnament=8;//饰品
+}
+//-----------------------------------------------------------------------装备功能
+//装备强化1101 equipStrengthHandler
+message request1101
+{
+required int32 handlerId=4;
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+required int32  strengthType=3;//装备强化类型 (1,金钱强化、2,钻石强化)
+}
+//stateCode 1 连接超时重新登录
+//          2数据异常
+//          3成功
+//          5金钱不足
+//          6 钻石不足
+//          10 强化等级已满
+//          11 成长型装备不能进行铜钱强化
+
+message response1101
+{
+required string equipSeqid=1;//装备唯一id
+required int32 coin=2;//当前铜钱数
+required int32 ingot=3;//当前钻石数
+required int32 level=4;//强化等级
+required string strengthInfo=5;//强化信息 level,type;level,type;
+}
+//修理装备1102 equipRepairHandler
+message request1102
+{
+required int32 handlerId=3;
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+}
+//stateCode 1连接超时重新登录
+//          2数据异常
+//          3成功
+//          5金钱不足
+//          12 不可修理
+message response1102
+{
+required string equipSeqid=1;//装备唯一id
+required int32 coin=2;//当前铜钱数
+required int32 durable=3;//装备耐久
+}
+//镶嵌装备1103 equipInsertHandler
+message request1103
+{
+required int32 handlerId=4;
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+required int32 gemId=3;//宝石id
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          8 装备不存在
+//          9 宝石不存在
+//          13 装备不可镶嵌
+//          14 宝石属性相同
+message response1103
+{
+required string equipSeqid=1;//装备唯一id
+required string insertInfo=2;//镶嵌信息
+required int32 gemId=3;//宝石唯一id
+}
+//拆除宝石 equipRemoveGemHandler
+message request1104
+{
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+required int32 gemId=3;//宝石id
+required int32 handlerId=4;
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          8 装备不存在
+message response1104
+{
+required string equipSeqid=1;//装备唯一id
+required string insertInfo=2;//镶嵌信息
+}
+//穿戴装备 wearEquipHandler
+message request1105
+{
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+required int32 handlerId=3;
+}
+//装备升品 equipUpgradeHandler
+message request1106
+{
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+required int32 handlerId=3;
+}
+message response1106
+{
+required string equipSeqid=1;//装备唯一id
+required RoleEquip roleEquip=2;//装备
+required int32 handlerId=3;
+}
+
+//装备洗练 equipRefineHandler
+message request1107
+{
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+repeated RoleEquipRefine lock=3;//锁住的属性
+required int32 handlerId=4;
+}
+message response1107
+{
+required string equipSeqid=1;//装备唯一id
+required RoleEquip roleEquip=2;//装备
+required int32 handlerId=3;
+}
+
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          8 装备不存在
+//          16 该装备已经穿戴
+
+//------------------------------------------------------------------宝石
+//宝石合成 gemCompositeHandler
+message request1201
+{
+required string token=1;//token
+required int32 gemId=2;//宝石id
+required int32 handlerId=3;
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          9 宝石不足
+//          15 宝石已达最高级
+//---------------------------------------------------------------------饰品
+//饰品强化 ornamentStrenghtHandler
+message request1301
+{
+required string token=1;//token
+required string ornamentId=2;//饰品id
+required int32 attributeIndex=3;//属性序列
+required int32 handlerId=4;
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          17 饰品不存在
+//          18 饰品属性已达最大值
+message response1301
+{
+required int32 quartz=2;//粉尘剩余数
+required RoleOrnament roleOrnament=3;//饰品
+}
+//饰品进阶1302 ornamentAdvancedHandler
+message request1302
+{
+required string token=1;//token
+required string ornamentId=2;//饰品id
+required int32 handlerId=3;
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          17 饰品不存在
+//          19 饰品品阶已达最高
+//          20 饰品属性没满
+message response1302
+{
+required RoleOrnament roleOrnament=1;//饰品
+}
+//穿戴饰品 wearOrnamentHandler
+message request1303
+{
+required string token=1;//token
+required string ornamentId=2;//饰品id
+required int32 handlerId=3;
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          17 饰品不存在
+//          21 饰品已经穿戴
+/////////////////////////////////////////////////////////////钓鱼
+//钓鱼 fishBattleHandler
+message request1401
+{
+required string token=1;//token
+required int32 mapId=2;//地图id
+required int32 handlerId=3;
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          5 金币不足
+//          22 所需等级不足
+//          23 体力不足
+//          27 没装备鱼竿
+//          28 没装备卷线轮
+//          29 没装备鱼线
+//          30 没装备鱼饵
+//          31 鱼竿耐久为0
+//          32 卷线轮耐久为0
+//          33 鱼线耐久为0
+message response1401{
+required int32 fishId=1;//鱼id
+}
+//结算钓鱼结果1402 clearFishHandler
+message request1402
+{
+required string token=1;//token
+required int32 interval1=2;//间隔
+required int32 interval2=3;//间隔
+required int32 maxHurt=4;//最大伤害
+required int32 clickNum=5;//连击数
+required int32 isSucces=6;//是否钓鱼成功
+required int32 handlerId=7;
+}
+message response1402
+{
+required int32 costenergy=1;//消耗体力
+required int32 exp=2;//获得经验
+required RoleFish roleFish=3;//鱼id
+}
+//出售鱼1403 sellFishHandler
+message request1403
+{
+required string token=1;//token
+required string fishIdList=2;//鱼唯一id列表,用逗号隔开
+required int32 aquariumId=3;// 钓场Id
+required int32 handlerId=4;
+}
+message response1403
+{
+required string fishIdList=1;//鱼唯一id列表,用逗号隔开
+required int32 sellCoin=2;//出售获得金币
+required int32 sellIngot=3;//出售获得钻石
+required int32 curCoin=4;//当前金币
+required int32 curIngot=5;//当前钻石
+required int32 aquariumId=6;// 钓场Id
+required int32 handlerId=7;
+}
+//收藏鱼1404 collectFishHandler
+message request1404
+{
+required string token=1;//token
+required string fishSeqId=2;//鱼唯一id
+required int32 handlerId=3;
+}
+//////////////////////////////////////////////////////////道具
+//穿戴道具 itemWearHandler
+message request1501{
+required int32 handlerId=3;
+required string token=1;//token
+required string seqId=2;//道具唯一id
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          16 装备已经穿戴
+//          24 道具不存在
+//          25 装备药水已满
+//          26 药水属性相同
+/////////////////////////////////////////////////////////饰品
+//水族箱饰品装饰1601 decorationWearHandler
+message request1601
+{
+required string token=1;//token
+required int32 type=2;//类型(1草2木3石4过滤器)
+required int32 quality=3;//品质
+required int32 handlerId=4;
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          35 水族箱饰品不存在
+//          36 已装备同类型水族箱饰品
+message response1601
+{
+required RoleDecoration roleDecoration=1;
+}
+//水族箱升级1602 aquariumLevelupHandler
+message request1602
+{
+required string token=1;//token
+required int32 aquariumId=2;//水族箱ID
+required int32 handlerId=3;
+}
+message response1602
+{
+  required int32 level=1;
+  required int32 handlerId=2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------------------------------------------------------
+//角色对象
+message RoleInfo
+{
+required string name=2;//姓名
+optional int32 sex=3;//性别
+optional int32 level=4;//等级
+optional int32 energy=5;//体力
+optional int32 fatigue=6;//疲劳度
+optional int32 lucky=7;//幸运值
+optional int32 coin=8;//铜钱
+optional int32 ingot=9;//元宝
+optional int32 quartz=10;//粉尘剩余数
+optional int32 mapId=11;//渔场id
+optional int32 fishId=12;//鱼ID
+optional int64 energyResume=13;//体力恢复
+optional int32 exp=14;//经验
+optional int32 ticketsSanya=15;//三亚门票
+optional int32 ticketsYamaxun=16;//亚马逊门票
+optional int32 ticketsMaoliqiusi=17;//毛里求斯门票
+optional int32 ticketsMixixibi=18;//密西西比河门票
+optional int32 ticketsMaerdaifu=19;//马尔代夫门票
+}
+//水族箱
+message RoleAquarium
+{
+required string id=1;//id
+optional int32 aquariumId=2;//水族箱ID
+optional int32 capacity=3;//容量
+optional int32 level=4;//水族箱等级
+repeated RoleFish fishList=5;//鱼列表
+optional int32 fishNum=6;//鱼的数量
+}
+//水族箱饰品
+message RoleDecoration
+{
+repeated RoleDecorationItem d1=1;//水草[{q=品质,t=剩余时间}]
+repeated RoleDecorationItem d2=2;//沉木[{q=品质,t=剩余时间}]
+repeated RoleDecorationItem d3=3;//鹅卵石[{q=品质,t=剩余时间}]
+repeated RoleDecorationItem d4=4;//过滤器[{q=品质,t=剩余时间}]
+repeated RoleDecorationUsing using=5;//正在使用中水草[{t=1草2木3石4过滤器q=品质,t=开始使用时间}]
+}
+//水族箱饰品--item
+message RoleDecorationItem
+{
+required int32 quality=1;//品质
+required int32 time=2;//剩余时间
+}
+//水族箱饰品--正在使用
+message RoleDecorationUsing
+{
+required int32 type=1;//类型
+required int32 quality=2;//品质
+required int32 time=3;//开始使用时间
+}
+//装备
+message RoleEquip
+{
+required string id=1;//装备唯一id
+optional int32 equipId=2;//装备id
+optional int32 isWear=3;//是否装备
+optional int32 durable=4;//耐久
+optional int32 level=5;//强化等级
+optional string strengthInfo=6;//强化信息
+optional string insertInfo=7;//镶嵌信息
+optional int32 position=8;//位置
+optional string refinetInfo=9;//洗练信息
+}
+//装备洗练
+message RoleEquipRefine
+{
+required int32 lid=1;//库id,对应Additional.xls.liberaryID
+required int32 pid=2;//属性ID,对应Additional.xls.propertyX(1-10)
+}
+//鱼
+message RoleFish
+{
+required string id=1;//鱼唯一id
+optional int32 fid=2;//鱼id
+optional int32 weight=3;//初始体重
+optional int64 time=4;//上次结算时间
+optional int32 coin=5;//累积的金币
+}
+//宝石
+message RoleGem
+{
+required string id=1;//宝石唯一id
+optional int32 gemId=2;//宝石id
+optional int32 num=3;//数量
+optional int32 position=4;//位置
+}
+//道具
+message RoleItem
+{
+required string id=1;//宝石唯一id
+optional int32 itemId=2;//道具id
+optional int32 itemNum=3;//道具数量
+optional int32 isWear=4;//是否装备
+optional int32 position=5;//位置
+}
+//饰品
+message RoleOrnament
+{
+required string id=1;//饰品id
+optional int32 isWear=2;//是否装备
+optional int32 level=3;//饰品品阶
+optional int32 addition1=4;
+optional int32 addition2=5;
+optional int32 addition3=6;
+optional int32 addition4=7;
+optional int32 position=8;
+}
+
+
+message RoleInfo1
+{
+ required string name=2;//
+ required int32 sex=3;//
+ required int32 level=4;//
+}
+message requesttest1003
+{
+required string token=1;
+ required string flag=2;
+ required  int32 handlerId=3;
+}
+message responsetest1003
+{
+required string uid=1;
+required RoleInfo1 roleInfo=2;
+}
