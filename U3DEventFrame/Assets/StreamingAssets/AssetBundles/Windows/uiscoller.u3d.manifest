@@ -1,0 +1,14 @@
+ManifestFileVersion: 0
+CRC: 2356623688
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 57e6b4eb45b669c6c4c271fdd76e26fe
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
+HashAppended: 0
+ClassTypes: []
+Assets:
+- Assets/Art/Scences/UIScoller/Test.unity
+Dependencies: []

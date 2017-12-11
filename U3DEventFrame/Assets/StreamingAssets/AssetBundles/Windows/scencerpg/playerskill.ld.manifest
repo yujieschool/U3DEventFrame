@@ -1,0 +1,61 @@
+ManifestFileVersion: 0
+CRC: 2157662177
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 71707fe093f04041b3e5438792f4f894
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 46e4a8d90d07e434133cf56d65a3bbf2
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: f5dea9426c185cb428e73dc7962919ed, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 45a2fec77d270c245b53e196d4dd6aea, type: 3}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/SkillArrow/Materials/12.mat
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/SkillIcon/SkillFight.png
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/SkillArrow/weapon.prefab
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/Ice/EffectObjects/Materials/No Name.mat
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/Ice/Prefabs/IceStrikeEffect.prefab
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/Ice/EffectMaterials/SoftSmokeAdd.mat
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/Ice/EffectObjects/Emitter_60.FBX
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/SkillIcon/Skill_3025.png
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/SkillIcon/Skill_4015.png
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/Ice/EffectMaterials/SharpCircle.png
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/Ice/EffectMaterials/SoftArc_NAdd.png
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/Ice/EffectMaterials/SharpCircle.mat
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/Ice/EffectMaterials/SoftSmoke.png
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/SkillArrow/Textures/0877.tga
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/SkillIcon/iocn_ho.png
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/SkillIcon/icon_zhu.png
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/Ice/EffectMaterials/SoftArc.mat
+- Assets/Art/Scences/ScenceRPG/PlayerSkill/Ice/EffectObjects/Arc_60.FBX
+Dependencies: []

@@ -1,0 +1,88 @@
+ManifestFileVersion: 0
+CRC: 804454987
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7f2e1c12f4f0c4f4c7ef81fc7deb2c2d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6c3e2faca8435f6785e79d4d692aa84a
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Art/Scences/ScenceRPG/NPC/Model/zombie.FBX
+- Assets/Art/Scences/ScenceRPG/NPC/Model/Mecanim/elf dark_mecanim.FBX
+- Assets/Art/Scences/ScenceRPG/NPC/Materials/shadow.mat
+- Assets/Art/Scences/ScenceRPG/NPC/Samples/skeleton_02.prefab
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/shadow2.png
+- Assets/Art/Scences/ScenceRPG/NPC/Samples/skeleton_01.prefab
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/goblin_01.tga
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/orc_02.tga
+- Assets/Art/Scences/ScenceRPG/NPC/Model/orc.FBX
+- Assets/Art/Scences/ScenceRPG/NPC/Materials/goblin_01.mat
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/goblin_02.tga
+- Assets/Art/Scences/ScenceRPG/NPC/Materials/orc_02.mat
+- Assets/Art/Scences/ScenceRPG/NPC/Extra Content/Enemies_instructions_1.0.pdf
+- Assets/Art/Scences/ScenceRPG/NPC/Materials/orc_01.mat
+- Assets/Art/Scences/ScenceRPG/NPC/Samples/elf dark_02.prefab
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/zombie_02.tga
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/elfs_dark_02.tga
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/elfs_dark_01.tga
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/zombie_01.tga
+- Assets/Art/Scences/ScenceRPG/NPC/Extra Content/Fantasy Horde - Enemies.jpg
+- Assets/Art/Scences/ScenceRPG/NPC/Samples/goblin_01.prefab
+- Assets/Art/Scences/ScenceRPG/NPC/Materials/elfs_dark_01.mat
+- Assets/Art/Scences/ScenceRPG/NPC/Samples/orc_01.prefab
+- Assets/Art/Scences/ScenceRPG/NPC/Samples/zombie_02.prefab
+- Assets/Art/Scences/ScenceRPG/NPC/Model/goblin.FBX
+- Assets/Art/Scences/ScenceRPG/NPC/Model/Mecanim/skeleton_mecanim.FBX
+- Assets/Art/Scences/ScenceRPG/NPC/Extra Content/animations.zip
+- Assets/Art/Scences/ScenceRPG/NPC/Samples/goblin_02.prefab
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/skeleton_01.tga
+- Assets/Art/Scences/ScenceRPG/NPC/Materials/elfs_dark_02.mat
+- Assets/Art/Scences/ScenceRPG/NPC/Samples/zombie_01.prefab
+- Assets/Art/Scences/ScenceRPG/NPC/Materials/skeleton_01.mat
+- Assets/Art/Scences/ScenceRPG/NPC/Samples/elf dark_01.prefab
+- Assets/Art/Scences/ScenceRPG/NPC/Materials/zombie_01.mat
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/skeleton_02.tga
+- Assets/Art/Scences/ScenceRPG/NPC/Materials/zombie_02.mat
+- Assets/Art/Scences/ScenceRPG/NPC/Model/elf dark.FBX
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/shadow.png
+- Assets/Art/Scences/ScenceRPG/NPC/Materials/goblin_02.mat
+- Assets/Art/Scences/ScenceRPG/NPC/Model/Mecanim/orc_mecanim.FBX
+- Assets/Art/Scences/ScenceRPG/NPC/Model/skeleton.FBX
+- Assets/Art/Scences/ScenceRPG/NPC/Textures/orc_01.tga
+- Assets/Art/Scences/ScenceRPG/NPC/Samples/orc_02.prefab
+- Assets/Art/Scences/ScenceRPG/NPC/Model/Mecanim/zombie_mecanim.FBX
+- Assets/Art/Scences/ScenceRPG/NPC/Model/Mecanim/goblin_mecanim.FBX
+- Assets/Art/Scences/ScenceRPG/NPC/Materials/skeleton_02.mat
+- Assets/Art/Scences/ScenceRPG/NPC/Extra Content/Enemies_variations.jpg
+Dependencies: []

@@ -1,0 +1,49 @@
+ManifestFileVersion: 0
+CRC: 147306126
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0e0db10975c2ee44bcea513b2511aab8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0c9cbe4b0b9a375d05846f3fe2c5c68d
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/Art/Scences/ScenceRPG/Particles/Particle Fog Medium.prefab
+- Assets/Art/Scences/ScenceRPG/Particles/Particle Ripples.prefab
+- Assets/Art/Scences/ScenceRPG/Particles/Particle Fog Blue Small.prefab
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/glow_gradient.tif
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/Fire1.mat
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/Ripples1.tif
+- Assets/Art/Scences/ScenceRPG/Particles/Particle Watersplash.prefab
+- Assets/Art/Scences/ScenceRPG/Particles/Particle Fire1.prefab
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/Ripples.mat
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/Smoke1.tif
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/Smoke1.mat
+- Assets/Art/Scences/ScenceRPG/Particles/Particle Ripples and Splash.prefab
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/Glow_flare.tif
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/Glow_Gradient.mat
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/bubbles1.tif
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/Water_splat.tif
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/Fire1.tif
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/Water_splash.mat
+- Assets/Art/Scences/ScenceRPG/Particles/Particle Smoke_Green 1.prefab
+- Assets/Art/Scences/ScenceRPG/Particles/Materials Textures/bubbles1.mat
+- Assets/Art/Scences/ScenceRPG/Particles/Particle Fog Large.prefab
+- Assets/Art/Scences/ScenceRPG/Particles/Particle Smoke_Green.prefab
+Dependencies: []

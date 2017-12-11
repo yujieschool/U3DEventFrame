@@ -1,0 +1,132 @@
+ManifestFileVersion: 0
+CRC: 2726027403
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: scencerpg.u3d
+      Dependencies:
+        Dependency_0: scencerpg/npc.ld
+        Dependency_1: scencerpg/demo.ld
+        Dependency_2: scencerpg/playerskill.ld
+        Dependency_3: scencerpg/litmap.ld
+        Dependency_4: scencerpg/player.ld
+    Info_1:
+      Name: uiparticle.u3d
+      Dependencies: {}
+    Info_2:
+      Name: uibatch.u3d
+      Dependencies:
+        Dependency_0: uibatch/texture.ld
+    Info_3:
+      Name: uiscoller.u3d
+      Dependencies: {}
+    Info_4:
+      Name: demo/scences.u3d
+      Dependencies:
+        Dependency_0: demo.ld
+    Info_5:
+      Name: uimove/scences.u3d
+      Dependencies:
+        Dependency_0: uimove/texture.ld
+        Dependency_1: uimove/shader.ld
+    Info_6:
+      Name: uiscence/scences.u3d
+      Dependencies: {}
+    Info_7:
+      Name: uiwave/scences.u3d
+      Dependencies:
+        Dependency_0: scencerpg/npc.ld
+        Dependency_1: uibatch/texture.ld
+        Dependency_2: uiwave/shader.ld
+    Info_8:
+      Name: uiflash/scences.u3d
+      Dependencies:
+        Dependency_0: uiflash/texture.ld
+        Dependency_1: uiflash/shader.ld
+    Info_9:
+      Name: luascence/secences.u3d
+      Dependencies: {}
+    Info_10:
+      Name: scencerpg/npc.ld
+      Dependencies: {}
+    Info_11:
+      Name: scencerpg/particles.ld
+      Dependencies: {}
+    Info_12:
+      Name: scencerpg/demo.ld
+      Dependencies: {}
+    Info_13:
+      Name: uimove/texture.ld
+      Dependencies: {}
+    Info_14:
+      Name: scencerpg/playerskill.ld
+      Dependencies: {}
+    Info_15:
+      Name: uiwave/texture.ld
+      Dependencies: {}
+    Info_16:
+      Name: uiscence/common.ld
+      Dependencies: {}
+    Info_17:
+      Name: uibatch/texture.ld
+      Dependencies: {}
+    Info_18:
+      Name: uiflash/texture.ld
+      Dependencies: {}
+    Info_19:
+      Name: scencerpg/litmap.ld
+      Dependencies: {}
+    Info_20:
+      Name: demo/loading.ld
+      Dependencies:
+        Dependency_0: demo/common.ld
+    Info_21:
+      Name: demo/common.ld
+      Dependencies: {}
+    Info_22:
+      Name: uiflash/shader.ld
+      Dependencies:
+        Dependency_0: uiflash/texture.ld
+    Info_23:
+      Name: uiwave/shader.ld
+      Dependencies:
+        Dependency_0: uiwave/texture.ld
+    Info_24:
+      Name: uiclip.ld
+      Dependencies: {}
+    Info_25:
+      Name: uimove/shader.ld
+      Dependencies: {}
+    Info_26:
+      Name: demo.ld
+      Dependencies: {}
+    Info_27:
+      Name: demo/regist.ld
+      Dependencies:
+        Dependency_0: demo/common.ld
+    Info_28:
+      Name: uiscence/registing.ld
+      Dependencies:
+        Dependency_0: uiscence/common.ld
+    Info_29:
+      Name: luascence/loading.ld
+      Dependencies:
+        Dependency_0: demo/common.ld
+    Info_30:
+      Name: luascence/registing.ld
+      Dependencies:
+        Dependency_0: demo/common.ld
+    Info_31:
+      Name: uiscence/loading.ld
+      Dependencies:
+        Dependency_0: uiscence/common.ld
+    Info_32:
+      Name: luademo/demo.ld
+      Dependencies: {}
+    Info_33:
+      Name: scencerpg/player.ld
+      Dependencies:
+        Dependency_0: scencerpg/npc.ld
+    Info_34:
+      Name: luademo/scences.u3d
+      Dependencies: {}

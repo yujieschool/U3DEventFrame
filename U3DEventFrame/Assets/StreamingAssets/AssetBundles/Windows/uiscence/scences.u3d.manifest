@@ -1,0 +1,15 @@
+ManifestFileVersion: 0
+CRC: 557010848
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ae5894ba98319e18ed43d9fd7ac0f938
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
+HashAppended: 0
+ClassTypes: []
+Assets:
+- Assets/Art/Scences/UIScence/Scences/Scences.unity
+- Assets/Art/Scences/UIScence/Scences/Test.unity
+Dependencies: []

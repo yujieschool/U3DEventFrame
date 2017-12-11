@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 624979616
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 51099c9bb84939a92f29846cc1a5b73b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4d24bf54f46935ed9e6cf78ac481bb9d
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Art/Scences/UIFlash/Texture/0003.png
+- Assets/Art/Scences/UIFlash/Texture/button_endless.png
+Dependencies: []

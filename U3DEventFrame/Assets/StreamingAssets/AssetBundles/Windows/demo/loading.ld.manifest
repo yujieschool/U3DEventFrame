@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 1363442682
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ff13513d0f8c3bde50b23ef87f2fd72a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b937d943ecb36abed384f4fbe2726851
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/Art/Scences/Demo/Loading/Loading.prefab
+- Assets/Art/Scences/Demo/Loading/Bg_Map02.png
+Dependencies:
+- D:/Unity3d/TeachRPG/AssetBundles/Windows/demo/common.ld

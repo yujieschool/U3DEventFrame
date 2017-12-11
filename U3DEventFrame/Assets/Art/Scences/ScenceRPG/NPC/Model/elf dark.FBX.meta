@@ -1,0 +1,1124 @@
+fileFormatVersion: 2
+guid: 49a87cabeabd3be4695304691aba9d65
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bone_elf arch_botton00
+    100002: bone_elf arch_botton01
+    100004: bone_elf arch_main
+    100006: bone_elf arch_top00
+    100008: bone_elf arch_top01
+    100010: ctrl_goblin arch_arrow
+    100012: ctrl_goblin arch_main
+    100014: dark elf
+    100016: dark elf_arch
+    100018: dark elf_helmet
+    100020: dark elf_quiver
+    100022: dark elf_staff
+    100024: //RootNode
+    100026: Elf_weaponL
+    100028: Elf_weaponR
+    100030: Elfcloth_back
+    100032: Elfcloth_front
+    100034: Elfhair1
+    100036: Elfhair2
+    100038: Elfhair3
+    100040: ElfHead
+    100042: ElfLCalf
+    100044: ElfLCollarbone
+    100046: ElfLDigit11
+    100048: ElfLDigit11 1
+    100050: ElfLDigit12
+    100052: ElfLDigit13
+    100054: ElfLDigit21
+    100056: ElfLDigit22
+    100058: ElfLDigit23
+    100060: ElfLDigit31
+    100062: ElfLDigit32
+    100064: ElfLDigit33
+    100066: ElfLFoot
+    100068: ElfLForearm
+    100070: ElfLPalm
+    100072: ElfLThigh
+    100074: ElfLUpperarm
+    100076: Elfmouth
+    100078: ElfNeck
+    100080: ElfPelvis
+    100082: ElfRCalf
+    100084: ElfRCollarbone
+    100086: ElfRDigit11
+    100088: ElfRDigit11 1
+    100090: ElfRDigit12
+    100092: ElfRDigit13
+    100094: ElfRDigit21
+    100096: ElfRDigit22
+    100098: ElfRDigit23
+    100100: ElfRDigit31
+    100102: ElfRDigit32
+    100104: ElfRDigit33
+    100106: ElfRFoot
+    100108: ElfRForearm
+    100110: ElfRibcage
+    100112: ElfRPalm
+    100114: ElfRThigh
+    100116: ElfRUpperarm
+    100118: ElfSpine1
+    100120: ElfSpine2
+    100122: ElfSpine3
+    400000: bone_elf arch_botton00
+    400002: bone_elf arch_botton01
+    400004: bone_elf arch_main
+    400006: bone_elf arch_top00
+    400008: bone_elf arch_top01
+    400010: ctrl_goblin arch_arrow
+    400012: ctrl_goblin arch_main
+    400014: dark elf
+    400016: dark elf_arch
+    400018: dark elf_helmet
+    400020: dark elf_quiver
+    400022: dark elf_staff
+    400024: //RootNode
+    400026: Elf_weaponL
+    400028: Elf_weaponR
+    400030: Elfcloth_back
+    400032: Elfcloth_front
+    400034: Elfhair1
+    400036: Elfhair2
+    400038: Elfhair3
+    400040: ElfHead
+    400042: ElfLCalf
+    400044: ElfLCollarbone
+    400046: ElfLDigit11
+    400048: ElfLDigit11 1
+    400050: ElfLDigit12
+    400052: ElfLDigit13
+    400054: ElfLDigit21
+    400056: ElfLDigit22
+    400058: ElfLDigit23
+    400060: ElfLDigit31
+    400062: ElfLDigit32
+    400064: ElfLDigit33
+    400066: ElfLFoot
+    400068: ElfLForearm
+    400070: ElfLPalm
+    400072: ElfLThigh
+    400074: ElfLUpperarm
+    400076: Elfmouth
+    400078: ElfNeck
+    400080: ElfPelvis
+    400082: ElfRCalf
+    400084: ElfRCollarbone
+    400086: ElfRDigit11
+    400088: ElfRDigit11 1
+    400090: ElfRDigit12
+    400092: ElfRDigit13
+    400094: ElfRDigit21
+    400096: ElfRDigit22
+    400098: ElfRDigit23
+    400100: ElfRDigit31
+    400102: ElfRDigit32
+    400104: ElfRDigit33
+    400106: ElfRFoot
+    400108: ElfRForearm
+    400110: ElfRibcage
+    400112: ElfRPalm
+    400114: ElfRThigh
+    400116: ElfRUpperarm
+    400118: ElfSpine1
+    400120: ElfSpine2
+    400122: ElfSpine3
+    2300000: dark elf_helmet
+    2300002: dark elf_quiver
+    2300004: dark elf_staff
+    3300000: dark elf_helmet
+    3300002: dark elf_quiver
+    3300004: dark elf_staff
+    4300000: dark elf_staff
+    4300002: dark elf_helmet
+    4300004: dark elf_quiver
+    4300006: dark elf
+    4300008: dark elf_arch
+    7400000: idle
+    7400002: idle_break
+    7400004: hit
+    7400006: death
+    7400008: attack
+    7400010: special
+    7400012: jump
+    7400014: bow
+    7400016: walk
+    7400018: run
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: dark elf
+    13700002: dark elf_arch
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file\nelf darkAvatar Rig Configuration
+      mis-match. Inbetween bone rotation in configuration does not match rotation
+      in animation file\nelf dark\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'ElfSpine3' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'ElfRibcage' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'Elfmouth'
+      has translation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle_break
+      takeName: Take 001
+      firstFrame: 50
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hit
+      takeName: Take 001
+      firstFrame: 110
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: death
+      takeName: Take 001
+      firstFrame: 130
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack
+      takeName: Take 001
+      firstFrame: 170
+      lastFrame: 195
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: special
+      takeName: Take 001
+      firstFrame: 200
+      lastFrame: 235
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: jump
+      takeName: Take 001
+      firstFrame: 245
+      lastFrame: 290
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: bow
+      takeName: Take 001
+      firstFrame: 300
+      lastFrame: 355
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 400
+      lastFrame: 435
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run
+      takeName: Take 001
+      firstFrame: 450
+      lastFrame: 473
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: ElfPelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLThigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRThigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLCalf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRCalf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfSpine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfSpine2
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfNeck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfHead
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLCollarbone
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRCollarbone
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLUpperarm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRUpperarm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLPalm
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRPalm
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLDigit11
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRDigit11
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elfmouth
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLDigit21
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLDigit22
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLDigit23
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLDigit31
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLDigit32
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfLDigit33
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elf_weaponL
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRDigit21
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRDigit22
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRDigit23
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRDigit11 1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRDigit12
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRDigit13
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRDigit31
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRDigit32
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ElfRDigit33
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: elf dark(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: dark elf
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: dark elf_arch
+      parentName: 
+      position: {x: -1.9055176, y: 0.4239439, z: -0.0027595568}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ElfPelvis
+      parentName: 
+      position: {x: 0.00000006901448, y: 0.974885, z: -0.112939894}
+      rotation: {x: 0.49912703, y: -0.5008716, z: -0.4991269, w: 0.5008715}
+      scale: {x: 0.9999998, y: 1.0000002, z: 1.0000005}
+    - name: Elfcloth_back
+      parentName: 
+      position: {x: -0.00014977637, y: -0.042875346, z: 0.000000011466922}
+      rotation: {x: 0.000000015291072, y: 0.00000022349109, z: 1, w: 0.00000007442771}
+      scale: {x: 0.99999976, y: 0.9999996, z: 0.99999976}
+    - name: Elfcloth_front
+      parentName: 
+      position: {x: 0.0006209438, y: 0.1779995, z: -0.000000043348148}
+      rotation: {x: -0.000000029438322, y: 0.00000020866791, z: 1, w: -0.000000059604552}
+      scale: {x: 1, y: 0.9999997, z: 1}
+    - name: ElfLThigh
+      parentName: 
+      position: {x: -0.0262862, y: 0.07167052, z: 0.09446586}
+      rotation: {x: 0.017487248, y: 0.9989655, z: 0.0041097766, w: 0.04177631}
+      scale: {x: 1.0000002, y: 0.9999998, z: 0.99999946}
+    - name: ElfLCalf
+      parentName: 
+      position: {x: -0.46747524, y: 0.000000013563624, z: 0.000000101159216}
+      rotation: {x: 0.0006987361, y: -0.0008827923, z: 0.05417282, w: 0.998531}
+      scale: {x: 1, y: 0.99999994, z: 1.0000004}
+    - name: ElfLFoot
+      parentName: 
+      position: {x: -0.50017595, y: 0.00000023724844, z: 0.0000003534389}
+      rotation: {x: -0.07594443, y: -0.005151637, z: -0.714, w: 0.69599575}
+      scale: {x: 0.99999946, y: 0.9999991, z: 0.9999994}
+    - name: ElfLDigit11
+      parentName: 
+      position: {x: -0.2275378, y: 0.015741296, z: 0.0000022442762}
+      rotation: {x: 0.000000011666518, y: 0.00000017640484, z: -0.054379113, w: 0.9985204}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000005}
+    - name: ElfRThigh
+      parentName: 
+      position: {x: -0.026286086, y: 0.07167045, z: -0.09446588}
+      rotation: {x: 0.0174876, y: 0.9989656, z: -0.0041098213, w: -0.041776203}
+      scale: {x: 0.9999999, y: 0.9999996, z: 0.99999905}
+    - name: ElfRCalf
+      parentName: 
+      position: {x: -0.4674756, y: 0.00000007377508, z: -0.00000014156497}
+      rotation: {x: -0.000704759, y: 0.0008231712, z: 0.054131985, w: 0.9985332}
+      scale: {x: 0.99999976, y: 1, z: 0.9999998}
+    - name: ElfRFoot
+      parentName: 
+      position: {x: -0.5001759, y: 0.00000017612584, z: -0.00000029188743}
+      rotation: {x: 0.076019205, y: 0.005316621, z: -0.714016, w: 0.6959698}
+      scale: {x: 1.0000004, y: 1, z: 1.0000002}
+    - name: ElfRDigit11
+      parentName: 
+      position: {x: -0.22753786, y: 0.015741332, z: -0.0000021788562}
+      rotation: {x: 0.000008470244, y: -0.0001557644, z: -0.05430493, w: 0.9985244}
+      scale: {x: 1, y: 1.0000002, z: 1}
+    - name: ElfSpine1
+      parentName: 
+      position: {x: -0.069777474, y: -0.005338772, z: -0.000000034583152}
+      rotation: {x: 0.00000046076505, y: 0.00000009146762, z: 0.14902797, w: -0.98883295}
+      scale: {x: 0.9999997, y: 0.99999994, z: 1.0000001}
+    - name: ElfSpine2
+      parentName: 
+      position: {x: -0.21464232, y: 0.00000019806517, z: 0.00000003826889}
+      rotation: {x: -0.00000043693163, y: -0.00000005152361, z: -0.16649751, w: -0.9860419}
+      scale: {x: 1.0000005, y: 0.99999976, z: 0.99999976}
+    - name: ElfSpine3
+      parentName: 
+      position: {x: -0.18284775, y: -0.000000019060431, z: 0.0000000128844055}
+      rotation: {x: 0.000000017819657, y: 0.000000021218057, z: 0.07543166, w: 0.99715096}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000002}
+    - name: ElfRibcage
+      parentName: 
+      position: {x: -0.19649217, y: -0.000000042399915, z: -0.00000001350407}
+      rotation: {x: -0.000000061218536, y: -0.000000004170633, z: -0.09479664, w: 0.99549663}
+      scale: {x: 0.99999934, y: 0.99999946, z: 1.0000001}
+    - name: dark elf_quiver
+      parentName: 
+      position: {x: 1.6256404, y: 0.100168146, z: 0.00000014305114}
+      rotation: {x: 0.7071068, y: -0.00000018702664, z: -0.7071068, w: -0.00000018702664}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000001}
+    - name: ElfLCollarbone
+      parentName: 
+      position: {x: 0.021013511, y: 0.12286757, z: 0.056143846}
+      rotation: {x: 0.03445473, y: 0.7081847, z: 0.18829456, w: 0.6795826}
+      scale: {x: 0.99999934, y: 0.9999999, z: 0.99999994}
+    - name: ElfLUpperarm
+      parentName: 
+      position: {x: -0.15569821, y: 0.00000017638624, z: -0.0000008527313}
+      rotation: {x: 0.149064, y: 0.00018813393, z: -0.16029297, w: 0.97574896}
+      scale: {x: 0.9999999, y: 0.99999976, z: 1.0000001}
+    - name: ElfLForearm
+      parentName: 
+      position: {x: -0.30170614, y: 0.000000039024012, z: 0.00000030883973}
+      rotation: {x: 0.08311696, y: -0.005063185, z: -0.019679168, w: 0.99633265}
+      scale: {x: 0.9999993, y: 1.000001, z: 0.9999992}
+    - name: ElfLPalm
+      parentName: 
+      position: {x: -0.23329008, y: -0.000000054992434, z: -0.0000008483695}
+      rotation: {x: -0.76061875, y: 0.049303524, z: 0.036455315, w: 0.6462967}
+      scale: {x: 1.0000001, y: 0.9999997, z: 1.0000001}
+    - name: Elf_weaponL
+      parentName: 
+      position: {x: -0.12093622, y: -0.040181123, z: 0.00018440248}
+      rotation: {x: 0.00398173, y: 0.99999183, z: -0.0007027168, w: -0.00009870256}
+      scale: {x: 1.0000015, y: 0.99999976, z: 1.0000005}
+    - name: ctrl_goblin arch_main
+      parentName: 
+      position: {x: -0, y: -0.00000022888185, z: 0.000000076293944}
+      rotation: {x: -0.11965971, y: -0.023618372, z: 0.09145892, w: 0.9883112}
+      scale: {x: 0.9999992, y: 1.0000014, z: 1.0000005}
+    - name: bone_elf arch_main
+      parentName: 
+      position: {x: 1.0187653, y: -1.0232322, z: -0.2934987}
+      rotation: {x: 0.09476907, y: -0.12654223, z: 0.7063249, w: 0.6900081}
+      scale: {x: 1, y: 1.0000015, z: 0.99999845}
+    - name: ctrl_goblin arch_arrow
+      parentName: 
+      position: {x: 0.30940118, y: -0.011464996, z: 0.009540023}
+      rotation: {x: -0.7071069, y: 0.000000001317089, z: 0.0000000013170892, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: bone_elf arch_botton00
+      parentName: 
+      position: {x: 0.4606423, y: 0.32028982, z: -1.0319579}
+      rotation: {x: -0.5687319, y: -0.5755986, z: 0.43530515, w: -0.3946388}
+      scale: {x: 1.0000013, y: 1.0000018, z: 0.9999968}
+    - name: bone_elf arch_botton01
+      parentName: 
+      position: {x: -0.560731, y: 0.0000030141791, z: 0.00000005123055}
+      rotation: {x: -0.000008220205, y: -0.000036421032, z: -0.97209275, w: 0.23459692}
+      scale: {x: 0.9999998, y: 1.0000019, z: 1.0000001}
+    - name: bone_elf arch_top00
+      parentName: 
+      position: {x: 0.4606416, y: 0.32028985, z: -1.0319579}
+      rotation: {x: 0.5707225, y: -0.5736351, z: 0.39862135, w: 0.4316476}
+      scale: {x: 1.0000019, y: 1.0000011, z: 0.99999845}
+    - name: bone_elf arch_top01
+      parentName: 
+      position: {x: -0.59430605, y: 0.000000014886929, z: -0.00000021670805}
+      rotation: {x: -0.00006792587, y: 0.00028677157, z: 0.97286326, w: 0.23138054}
+      scale: {x: 1.0000002, y: 0.99999946, z: 0.99999976}
+    - name: ElfLDigit11 1
+      parentName: 
+      position: {x: -0.03852415, y: 0.00095821376, z: 0.009483795}
+      rotation: {x: 0.5735449, y: 0.39967543, z: 0.03937911, w: 0.7139714}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: ElfLDigit12
+      parentName: 
+      position: {x: -0.064717986, y: 0.0042931326, z: -0.0033285562}
+      rotation: {x: -0.06664806, y: -0.003534203, z: 0.044078067, w: 0.9967962}
+      scale: {x: 1.0000004, y: 1.0000002, z: 0.9999999}
+    - name: ElfLDigit13
+      parentName: 
+      position: {x: -0.04285604, y: -0.00000035088155, z: 0.00000015370661}
+      rotation: {x: 0.0000012259258, y: 0.00000043716705, z: 0.1970772, w: 0.9803881}
+      scale: {x: 0.9999999, y: 1.0000005, z: 0.99999976}
+    - name: ElfLDigit21
+      parentName: 
+      position: {x: -0.15162933, y: 0.0001349807, z: 0.044834696}
+      rotation: {x: 0.00058634544, y: 0.037379634, z: 0.01567033, w: 0.9991782}
+      scale: {x: 1.0000007, y: 1, z: 1}
+    - name: ElfLDigit22
+      parentName: 
+      position: {x: -0.054667514, y: 0.00000006775978, z: -0.00000017387438}
+      rotation: {x: 0.0000008374073, y: -0.000002434204, z: 0.032670777, w: 0.99946624}
+      scale: {x: 1.0000001, y: 1, z: 1.0000002}
+    - name: ElfLDigit23
+      parentName: 
+      position: {x: -0.042855892, y: -0.000000045707935, z: 0.00000008015121}
+      rotation: {x: 0.0000005135477, y: 0.00000002142815, z: 0.028674612, w: 0.9995888}
+      scale: {x: 1.0000008, y: 1, z: 0.9999999}
+    - name: ElfLDigit31
+      parentName: 
+      position: {x: -0.15069062, y: 0.0063737477, z: 0.00700655}
+      rotation: {x: 0.0028809372, y: -0.021182591, z: 0.038546257, w: 0.99902815}
+      scale: {x: 1.0000006, y: 0.9999997, z: 1.0000001}
+    - name: ElfLDigit32
+      parentName: 
+      position: {x: -0.05277643, y: -0.0000001537872, z: -0.00000011593986}
+      rotation: {x: -0.0022003937, y: -0.00024136624, z: 0.034620818, w: 0.99939805}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1}
+    - name: ElfLDigit33
+      parentName: 
+      position: {x: -0.03494501, y: 0.00000011556279, z: 0.0000000051887534}
+      rotation: {x: -0.0013608335, y: -0.0065510995, z: 0.23871008, w: 0.9710679}
+      scale: {x: 1.0000002, y: 0.9999994, z: 1.0000002}
+    - name: ElfNeck
+      parentName: 
+      position: {x: -0.021019928, y: 0.051551074, z: -0.00000000877759}
+      rotation: {x: 0.00000005977405, y: 4.9891113e-10, z: 0.0111813545, w: 0.99993753}
+      scale: {x: 1.0000004, y: 0.9999999, z: 0.99999976}
+    - name: ElfHead
+      parentName: 
+      position: {x: -0.11415169, y: 0.000000023738432, z: 0.000000006601918}
+      rotation: {x: 0.000000044707196, y: -0.0000000142347005, z: 0.0111813685, w: -0.9999375}
+      scale: {x: 0.9999997, y: 0.99999994, z: 0.9999999}
+    - name: dark elf_helmet
+      parentName: 
+      position: {x: 1.7607826, y: 0.05116967, z: 0.0000000667572}
+      rotation: {x: 0.7071068, y: 0.00000015805072, z: -0.7071068, w: 0.00000015805072}
+      scale: {x: 0.9999999, y: 0.9999996, z: 0.9999998}
+    - name: Elfhair1
+      parentName: 
+      position: {x: -0.124708705, y: -0.023240948, z: 0}
+      rotation: {x: 0.024047088, y: -0.10909464, z: 0.81149864, w: 0.57357657}
+      scale: {x: 1.0000002, y: 0.99999946, z: 0.99999994}
+    - name: Elfhair2
+      parentName: 
+      position: {x: -0.11628662, y: 0, z: 0}
+      rotation: {x: 0.010040409, y: -0.04555025, z: 0.33882472, w: 0.9396926}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: Elfhair3
+      parentName: 
+      position: {x: -0.12951247, y: -0.000000076293944, z: 0}
+      rotation: {x: 0.0050976356, y: -0.023126485, z: 0.1720258, w: 0.9848078}
+      scale: {x: 1, y: 0.9999997, z: 0.9999999}
+    - name: Elfmouth
+      parentName: 
+      position: {x: 0.012175418, y: 0.04883923, z: -0.000000009714242}
+      rotation: {x: -0.0000000081108, y: -0.00000013450693, z: -0.819152, w: 0.5735765}
+      scale: {x: 1.0000001, y: 0.99999946, z: 1.0000001}
+    - name: ElfRCollarbone
+      parentName: 
+      position: {x: 0.021013118, y: 0.12286759, z: -0.056143835}
+      rotation: {x: 0.034454245, y: 0.70818424, z: -0.18829444, w: -0.6795832}
+      scale: {x: 1, y: 0.9999998, z: 1.0000002}
+    - name: ElfRUpperarm
+      parentName: 
+      position: {x: -0.15569822, y: -0.000000016774983, z: 0.0000004388262}
+      rotation: {x: -0.14906438, y: -0.0001890257, z: -0.16029254, w: 0.975749}
+      scale: {x: 1, y: 1.0000005, z: 0.9999997}
+    - name: ElfRForearm
+      parentName: 
+      position: {x: -0.30170617, y: -0.0000000019637567, z: -0.00000043450024}
+      rotation: {x: -0.0831166, y: 0.0050617666, z: -0.019679269, w: 0.99633265}
+      scale: {x: 0.99999994, y: 1.0000007, z: 0.9999998}
+    - name: ElfRPalm
+      parentName: 
+      position: {x: -0.23328952, y: -0.000000088773966, z: 0.000001753152}
+      rotation: {x: 0.7606187, y: -0.04930341, z: 0.03645531, w: 0.6462968}
+      scale: {x: 1.0000002, y: 0.9999996, z: 0.99999994}
+    - name: Elf_weaponR
+      parentName: 
+      position: {x: -0.13939926, y: -0.035400543, z: 0.0037890624}
+      rotation: {x: 0.00000014901163, y: 0.000000014901161, z: 0.00000007450575, w: 1}
+      scale: {x: 1.0000007, y: 0.9999999, z: 1.0000008}
+    - name: dark elf_staff
+      parentName: 
+      position: {x: 0.012351455, y: 0.012224274, z: 0.008792191}
+      rotation: {x: 0.6250286, y: 0.7800724, z: 0.019181851, w: -0.021409282}
+      scale: {x: 0.9999997, y: 0.9999992, z: 0.9999998}
+    - name: ElfRDigit11 1
+      parentName: 
+      position: {x: -0.03852417, y: 0.0009581756, z: -0.009483795}
+      rotation: {x: -0.49561685, y: 0.054459948, z: -0.19111244, w: 0.84550226}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.9999999}
+    - name: ElfRDigit12
+      parentName: 
+      position: {x: -0.05635039, y: -0.0006445856, z: -0.03228273}
+      rotation: {x: -0.009345267, y: -0.2638983, z: 0.042892233, w: 0.96355104}
+      scale: {x: 0.9999997, y: 1.0000007, z: 0.9999996}
+    - name: ElfRDigit13
+      parentName: 
+      position: {x: -0.042855907, y: -0.00000027984788, z: 0.000000019257252}
+      rotation: {x: -0.0000014162906, y: -0.00000048621865, z: 0.19707726, w: 0.9803881}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000004}
+    - name: ElfRDigit21
+      parentName: 
+      position: {x: -0.15162948, y: 0.00013496168, z: -0.04483482}
+      rotation: {x: -0.00045564256, y: -0.042029586, z: 0.014129288, w: 0.9990164}
+      scale: {x: 0.9999998, y: 1, z: 1.0000001}
+    - name: ElfRDigit22
+      parentName: 
+      position: {x: -0.05466712, y: 0.00000094903334, z: 0.00000008712349}
+      rotation: {x: -0.0000007604803, y: 0.0000013900525, z: 0.032660585, w: 0.99946654}
+      scale: {x: 1.0000008, y: 0.9999995, z: 1.0000002}
+    - name: ElfRDigit23
+      parentName: 
+      position: {x: -0.042856105, y: -0.00000029998816, z: -0.00000009239191}
+      rotation: {x: -0.00000055186877, y: -0.000000037871093, z: 0.028674616, w: 0.9995888}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000001}
+    - name: ElfRDigit31
+      parentName: 
+      position: {x: -0.15069105, y: 0.006373184, z: -0.007006621}
+      rotation: {x: 0.0123590585, y: -0.064866334, z: 0.033502772, w: 0.9972549}
+      scale: {x: 1.0000002, y: 0.9999995, z: 0.99999934}
+    - name: ElfRDigit32
+      parentName: 
+      position: {x: -0.05277647, y: -0.00000031670103, z: 0.000000026414174}
+      rotation: {x: 0.0022002752, y: 0.00024106388, z: 0.034626275, w: 0.9993979}
+      scale: {x: 1.0000008, y: 0.9999991, z: 1}
+    - name: ElfRDigit33
+      parentName: 
+      position: {x: -0.034945235, y: 0.00000023412083, z: -0.0000000030670502}
+      rotation: {x: 0.0013609369, y: 0.0065509067, z: 0.23870988, w: 0.9710679}
+      scale: {x: 1.0000001, y: 0.99999976, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: scencerpg/npc
+  assetBundleVariant: ld

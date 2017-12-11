@@ -1,0 +1,14 @@
+ManifestFileVersion: 0
+CRC: 3231027434
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 20390fce375f0c0bbdb12300f10c0a91
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
+HashAppended: 0
+ClassTypes: []
+Assets:
+- Assets/Art/Scences/UIParticle/UIParticle.unity
+Dependencies: []

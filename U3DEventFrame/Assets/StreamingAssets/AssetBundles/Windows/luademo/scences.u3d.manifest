@@ -1,0 +1,15 @@
+ManifestFileVersion: 0
+CRC: 610858426
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ba98b73feecffccecc34b47a331fa5e0
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
+HashAppended: 0
+ClassTypes: []
+Assets:
+- Assets/Art/Scences/LuaDemo/Scences/LuaDemo.unity
+- Assets/Art/Scences/LuaDemo/Scences/LuaC.unity
+Dependencies: []

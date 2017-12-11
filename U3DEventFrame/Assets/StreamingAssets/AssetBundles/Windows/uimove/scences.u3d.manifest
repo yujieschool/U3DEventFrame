@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 779657431
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b77bbf3c7cc7b78343f7b0a90cc92b76
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
+HashAppended: 0
+ClassTypes: []
+Assets:
+- Assets/Art/Scences/UIMove/Scences/UIMove.unity
+Dependencies:
+- D:/Unity3d/TeachRPG/AssetBundles/Windows/uimove/texture.ld
+- D:/Unity3d/TeachRPG/AssetBundles/Windows/uimove/shader.ld

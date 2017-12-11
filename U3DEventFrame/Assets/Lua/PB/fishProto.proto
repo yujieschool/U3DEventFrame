@@ -1,0 +1,1442 @@
+syntax = "proto2";
+option java_package = "com.fish.protobuf";
+option java_outer_classname = "FishProto";
+
+//渠道登录 enterChannelHandler
+message request1000
+{
+    required int32 handlerId=5;
+	required string Channel = 1;
+	required string ext1 = 2;
+    optional string ext2 = 3;
+	optional string ext3 = 4;
+
+}
+
+message response1000
+{
+
+    required string token = 1;
+	required int32 ishaveRolename = 2; //是否创建角色 0没有 1有
+	optional string accesstoken = 3;
+    required int32 handlerId=4;
+}
+//--------------------------------------------------------------
+//创建角色 createRoleHandler
+message request1001
+{
+required int32 handlerId=4;
+required string token = 1;
+required string rolename=2;
+required int32 sex=3;
+}
+//心跳 keepLiveHandler
+message request1002
+{
+required int32 handlerId=2;
+required string token=1;
+}
+//更新角色信息  updateUserHandler
+// flag 1更新全部信息 2角色信息 3水族箱信息 4水族箱饰品 5装备 6鱼 7宝石8道具9饰品   ,10角色属性,11已穿戴(多个更新分隔有"," 比如更新角色信息+鱼的信息 flag=2,6)
+message request1003
+{
+ required int32 handlerId=3;
+required string token=1;
+required string flag=2;//标签值
+}
+message responsetest{
+required string uid=1;//用户唯一id
+}
+message response1003
+{
+required string uid=1;//用户唯一id
+optional RoleInfo roleInfo=2;//角色信息
+repeated RoleAquarium roleAquarium=3;//水族箱
+optional RoleDecoration roleDecoration=4;//水族箱饰品
+repeated RoleEquip roleEquip=5;//装备
+repeated RoleGem roleGem=6;//宝石
+repeated RoleItem roleItem=7;//道具
+optional RoleOrnament roleOrnament=8;//饰品
+optional RoleAttr roleAttr=9;//战斗属性
+required string flag=10;//标签值
+}
+//获得其它人的装备信息 updateOtherEquipHandler
+message request1004
+{
+  required string token=1;
+  required string uid=2;//用户唯一id
+  required int32 handlerId=3;
+}
+//statecode 2;//数据异常
+message response1004
+{
+  required string uid=1;//用户唯一id
+  repeated RoleEquip roleEquip=2;//装备
+  repeated RoleItem roleItem=3;//道具
+  required int32 handlerId=4;
+}
+//获得其它人的水族箱信息 updateOtherAquariumHandler
+message request1005
+{
+  required string token=1;
+  required string uid=2;//用户唯一id
+  required int32 handlerId=3;
+}
+//statecode 2;//数据异常
+message response1005
+{
+  required string uid=1;//用户唯一id
+  repeated RoleAquarium roleAquarium=2;//水族箱
+  required RoleDecoration roleDecoration=3;//水族箱饰品
+  required int32 handlerId=4;
+}
+//获得本人鱼信息 updateFishHandler
+message request1006
+{
+  required string token=1;
+  required string id=2;//鱼唯一id
+  optional int32 fid=3;//鱼id
+  optional int32 aquariumId=4;//水族箱id
+  required int32 handlerId=5;
+}
+//statecode 2;//数据异常,57;//鱼不存在
+message response1006
+{
+  required RoleFish roleFish=1;//当前这条鱼的信息
+  required int32 handlerId=2;
+}
+//获得地图信息 updateMapHandler
+message request1007
+{
+  required string token=1;
+  required int32 handlerId=2;
+}
+//statecode 2;//数据异常
+message response1007
+{
+  repeated ItemInfo mapInfo=1;//各个地图的倍率信息 id=mapid,num=倍率
+  required int32 handlerId=2;
+}
+// 更改用户名和头像 updateNameAndPicHandler
+message request1008
+{
+  required string token =1;
+  required int32 handlerId = 2;
+  optional string name = 3;//昵称
+  optional int32 pic = 4;//头像
+}
+//将变化的属性传到前端
+message response1009
+{
+  repeated ItemInfo attrList=1;//id=attrId num=value
+  required int32 handlerId=2;//12002
+}
+//新消息提示
+message response1010
+{
+  required int32 handlerId=1;//12003
+  repeated ItemInfo list = 2;//id=1活动2签到3寻宝4礼包5邮件 6好友7背包8图鉴9水族箱10任务 ,num>0为有
+}
+
+
+//----------------------------------------------------------------------------------------装备功能
+//装备强化1101 equipStrengthHandler
+message request1101
+{
+
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+required int32  strengthType=3;//装备强化类型 (1,金钱强化、2,钻石强化)
+required int32 handlerId=4;
+optional int32 inlay_pos1=5;//强化位置1的宝石id(0没有,1 5%强化石,2 10%强化石,3 20%强化石 )
+optional int32 inlay_pos2=6;//强化位置2的宝石id(0没有,1 5%强化石,2 10%强化石,3 20%强化石 )
+optional int32 inlay_pos3=7;//强化位置3的宝石id(0没有,1 5%强化石,2 10%强化石,3 20%强化石 )
+}
+//stateCode 1 连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          5 金钱不足
+//          6 钻石不足
+//          10 强化等级已满
+//          11 成长型装备不能进行铜钱强化52;//强化宝石不存在50;//强化失败(几率)
+
+message response1101
+{
+required string equipSeqid=1;//装备唯一id
+required int32 coin=2;//当前铜钱数
+required int32 ingot=3;//当前钻石数
+required int32 level=4;//强化等级
+required string strengthInfo=5;//强化信息 level,type;level,type;
+}
+//修理装备1102 equipRepairHandler
+message request1102
+{
+required int32 handlerId=3;
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id 如果是0,表示修理全部装备中的
+}
+//stateCode 1连接超时重新登录
+//          2数据异常
+//          3成功
+//          5金钱不足
+//          12 不可修理
+message response1102
+{
+required string equipSeqid=1;//装备唯一id
+required int32 coin=2;//当前铜钱数
+required int32 durable=3;//装备耐久
+}
+//镶嵌装备1103 equipInsertHandler
+message request1103
+{
+required int32 handlerId=4;
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+required int32 gemId=3;//宝石id
+}
+//stateCode 1 连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          8 装备不存在
+//          9 宝石不存在
+//          13 装备不可镶嵌
+//          14 宝石属性相同
+message response1103
+{
+required string equipSeqid=1;//装备唯一id
+required string insertInfo=2;//镶嵌信息
+required int32 gemId=3;//宝石唯一id
+}
+//拆除宝石 equipRemoveGemHandler
+message request1104
+{
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+required int32 gemId=3;//宝石id
+required int32 handlerId=4;
+}
+//stateCode 1 连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          8 装备不存在
+message response1104
+{
+required string equipSeqid=1;//装备唯一id
+required string insertInfo=2;//镶嵌信息
+}
+
+//stateCode 1 连接超时重新登录8;//装备不存在16;//装备已经穿戴
+//穿戴装备 wearEquipHandler
+message request1105
+{
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+required int32 handlerId=3;
+}
+//装备升品 equipUpgradeHandler
+message request1106
+{
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+required int32 handlerId=3;
+}
+//stateCode 1 连接超时重新登录37;//没有强化到最高等级,不能进行升品38;//该装备不能进行升品
+message response1106
+{
+required string equipSeqid=1;//装备唯一id
+required RoleEquip roleEquip=2;//装备
+required int32 handlerId=3;
+}
+
+//装备洗练 equipRefineHandler
+message request1107
+{
+required string token=1;//token
+required string equipSeqid=2;//装备唯一id
+repeated int32 lock=3;//锁住的属性
+required int32 handlerId=4;
+}
+//stateCode 1 连接超时重新登录39;//该装备不能进行洗练40;//孔全都锁住了,所以不能洗练6;//钻石不足
+message response1107
+{
+required string equipSeqid=1;//装备唯一id
+required RoleEquip roleEquip=2;//装备
+required int32 handlerId=3;
+}
+//装备出售 equipSellHandler
+message request1108
+{
+required string token=1;//token
+required int32 handlerId=2;
+required string equipSeqid=3;//装备唯一id
+}
+//stateCode 1 连接超时重新登录
+message response1108
+{
+required int32 handlerId=1;
+required int32 coin=2;//出售的金额
+required int32 nowCoin=3;//当前所剩金币
+}
+
+//--------------------------------------------------------------------------------------宝石
+//宝石合成 gemCompositeHandler
+message request1201
+{
+required string token=1;//token
+required int32 gemId=2;//宝石id
+required int32 handlerId=3;
+required int32 num=4;//合成高级宝石的数量
+}
+//stateCode 1 连接超时重新登录
+message response1201
+{
+required int32 handlerId=1;
+required int32 gemId=2;//合成后的gemid
+required int32 num=3;//合成后的gem数量
+
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          9 宝石不足
+//          15 宝石已达最高级
+//-----------------------------------------------------------------------------------------饰品
+//饰品强化 ornamentStrenghtHandler
+message request1301
+{
+required string token=1;//token
+required string ornamentId=2;//饰品id
+required int32 attributeIndex=3;//属性序列
+required int32 handlerId=4;
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          17 饰品不存在
+//          18 饰品属性已达最大值
+message response1301
+{
+required int32 quartz=2;//粉尘剩余数
+required RoleOrnament roleOrnament=3;//饰品
+}
+//饰品进阶1302 ornamentAdvancedHandler
+message request1302
+{
+required string token=1;//token
+required string ornamentId=2;//饰品id
+required int32 handlerId=3;
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          17 饰品不存在
+//          19 饰品品阶已达最高
+//          20 饰品属性没满
+message response1302
+{
+required RoleOrnament roleOrnament=1;//饰品
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////钓鱼
+//钓鱼流程:1406->1401->1402->[1403/1404]
+//钓鱼 fishBattleHandler
+message request1401
+{
+required string token=1;//token
+required int32 handlerId=2;
+required int32 smallMapId=3;
+}
+//结算钓鱼结果1402 clearFishHandler
+message request1402
+{
+required string token=1;//token
+required int32 interval1=2;//间隔
+required int32 interval2=3;//间隔
+required int32 maxHurt=4;//最大伤害
+required int32 clickNum=5;//连击数
+required int32 isSucces=6;//是否钓鱼成功 0失败 1成功
+required int32 handlerId=7;
+}
+message response1402
+{
+optional int32 exp=2;//获得经验
+optional RoleFish roleFish=3;//鱼id
+repeated FishRankItem ranks=4;//当前鱼的世界排行
+optional int32 selfRecord = 5;//自己的这条鱼的历史最高纪录
+optional FishRankItem friendRecord = 6;//好友的这条鱼的最高纪录
+optional string dropObject = 7;//神秘奖励 没有为0，有的格式为 (道具id,道具数量)
+optional int32 isSucces=8;//是否钓鱼成功 0失败 1成功
+optional int32 level=9;//当前等级
+optional int32 expCurr=10;//当前经验
+}
+//出售鱼1403 sellFishHandler
+message request1403
+{
+required string token=1;//token
+required string fishIdList=2;//鱼唯一id列表,用逗号隔开
+required int32 aquariumId=3;// 钓场Id(结算时填0)
+required int32 handlerId=4;
+}
+message response1403
+{
+required string fishIdList=1;//鱼唯一id列表,用逗号隔开
+required int32 sellCoin=2;//出售获得金币
+required int32 sellIngot=3;//出售获得钻石
+required int32 curCoin=4;//当前金币
+required int32 curIngot=5;//当前钻石
+required int32 aquariumId=6;// 钓场Id
+required int32 handlerId=7;
+}
+//stateCode 1连接超时重新登录34;//水族箱已满
+//收藏鱼到水族箱1404 collectFishHandler
+message request1404
+{
+required string token=1;//token
+required string fishSeqId=2;//鱼唯一id
+required int32 handlerId=3;
+}
+//statecode 1连接超时重新登录 66神秘奖励不存在
+//领取神秘奖励1405 getDropObjectHandler
+message request1405
+{
+  required string token=1;//token
+  required string dropObject=2;//神秘奖励
+  required int32 handlerId=3;
+}
+// 进入战斗场景（用于获取鱼id）1406 enterFightSceneHandler
+message request1406
+{
+  required string token=1;//token
+  required int32 handlerId=2;
+  required int32 mapId=3;//地图id
+  required int32 smallMapId=4;//小地图id
+  optional int32 anotherBattle = 5; // 付费再次挑战 1是
+  optional int32 isLead = 6; // 是否为新手引导  1是  如果是，将返回新手引导必钓的鱼
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          5 金币不足
+//          6 钻石不足
+//          22 所需等级不足
+//          23 体力不足
+//          27 没装备鱼竿
+//          28 没装备卷线轮
+//          29 没装备鱼线
+//          30 没装备鱼饵
+//          31 鱼竿耐久为0
+//          32 卷线轮耐久为0
+//          33 鱼线耐久为0
+message response1406
+{
+  required int32 fishId=1;//鱼id
+  repeated int32 errorArray=2;//如果statecode为67,这个为非空
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////道具
+//穿戴道具 itemWearHandler
+message request1501{
+required int32 handlerId=3;
+required string token=1;//token
+required string seqId=2;//道具唯一id
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          16 装备已经穿戴
+//          24 道具不存在
+//          25 装备药水已满
+//          26 药水属性相同
+message response1501{
+  required int32 handlerId=1;
+  required int32 isWear=2;//是否装备 4鱼饵 5,6,7 药水位置
+  required int32 itemId = 3; // 物品系统id
+}
+
+//卸下道具 itemUnWearHandler
+message request1502{
+required int32 handlerId=3;
+required string token=1;//token
+required string seqId=2;//道具唯一id
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          24 道具不存在
+//          65 装备未穿戴
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////水族箱饰品
+//水族箱饰品装饰1601 decorationWearHandler
+message request1601
+{
+required string token=1;//token
+required int32 type=2;//类型(1草2木3石4过滤器)
+required int32 quality=3;//品质,如果是0,代表卸载
+required int32 handlerId=4;
+}
+//stateCode 1连接超时重新登录
+//          2 数据异常
+//          3 成功
+//          35 水族箱饰品不存在
+//          36 已装备同类型水族箱饰品
+message response1601
+{
+required RoleDecoration roleDecoration=1;
+}
+//水族箱升级1602 aquariumLevelupHandler
+message request1602
+{
+required string token=1;//token
+required int32 aquariumId=2;//水族箱ID
+required int32 handlerId=3;
+}
+//19;//等级已达最高 6;//钻石不足
+message response1602
+{
+  required int32 level=1;
+  required int32 handlerId=2;
+}
+//水族箱扩充格子 AquariumCapacityUpHandler
+message request1603
+{
+required string token=1;//token
+required int32 aquariumId=2;//水族箱ID
+required int32 handlerId=3;
+}
+//60;//水族箱格子已经开到最大6;//钻石不足
+message response1603
+{
+  required int32 capicity=1;
+  required int32 handlerId=2;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////宝箱抽奖
+//宝箱抽奖信息1701 lotteryInfoHandler
+message request1701
+{
+required string token=1;//token
+required int32 handlerId=2;
+}
+message response1701
+{
+  required int32 coinTimes=1;//已经免费金币抽奖的次数
+  required int32 coinNeedTime=2;//金币免费抽奖所需时间
+  required int32 ingotNeedTime=3;//钻石免费抽奖所需时间
+  required int32 handlerId=4;
+}
+//宝箱抽奖1702 lotteryDrawHandler
+message request1702
+{
+required string token=1;//token
+required int32 type=2;//抽奖类型:1金币抽奖2钻石抽奖
+required int32 timesType=3;//抽奖次数类型:1,1次,2,5连抽
+required int32 handlerId=4;
+}
+//6;//钻石不足5;//金钱不足
+message response1702
+{
+  required int32 costCoin=1;//消耗金币数量
+  required int32 costIngot=2;//消耗钻石数量
+  required int32 coinTimes=3;//已经免费金币抽奖的次数
+  required int32 coin=4;//当前金币
+  required int32 ingot=5;//当前钻石
+  repeated ItemInfo items=6;//抽到的东西
+  required int32 handlerId=7;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////好友
+//好友推送  friendPushHandler
+message request1801
+{
+required string token=1;//token
+required int32 handlerId=2;
+}
+//41;//好友数量达到最大
+message response1801
+{
+  repeated RoleSimpleInfo roles=1;//好友推送列表
+  required int32 handlerId=2;
+}
+
+//好友申请  friendApplyHandler
+message request1802
+{
+required string token=1;//token
+repeated UidInfo uids=2;//申请的id列表
+optional string name=3;//通过name进行好友申请
+required int32 handlerId=4;
+}
+//41;//好友数量达到最大
+message response1802
+{
+  repeated UidInfo uids=1;//申请成功的id列表
+  required int32 handlerId=2;
+}
+
+//好友申请列表  friendApplyListHandler
+message request1803
+{
+required string token=1;//token
+required int32 handlerId=2;
+}
+message response1803
+{
+  repeated RoleSimpleInfo roles=1;//好友申请列表
+  required int32 handlerId=2;
+}
+
+//好友处理申请(同意/拒绝)(批量)  friendApplyDealHandler
+message request1804
+{
+required string token=1;//token
+repeated UidInfo uids=2;//要处理的申请的id列表
+required int32 type=3;//处理类型1同意2拒绝
+required int32 handlerId=4;
+}
+//41;//好友数量达到最大42;//对方好友数量达到最大43;//已经是好友46;//对方在自己黑名单47;//已经在对方黑名单
+message response1804
+{
+  repeated UidInfo uids=1;//处理成功的id列表
+  required int32 type=2;//处理类型1同意2拒绝
+  required int32 handlerId=3;
+}
+
+//好友删除 friendDeleteHandler
+message request1805
+{
+required string token=1;//token
+repeated UidInfo uids=2;//要删除id列表
+required int32 handlerId=3;
+}
+message response1805
+{
+  repeated UidInfo uids=1;//处理成功的id列表
+  required int32 handlerId=2;
+}
+
+//好友送体力(批量) friendEnergySendHandler
+message request1806
+{
+required string token=1;//token
+repeated UidInfo uids=2;//要送id列表
+required int32 handlerId=3;
+}
+//2成功3失败
+message response1806
+{
+  repeated UidInfo uids=1;//处理成功的id列表
+  required int32 handlerId=2;
+}
+
+//好友接收体力(批量) friendEnergyReceiveHandler
+message request1807
+{
+required string token=1;//token
+repeated UidInfo uids=2;//要送接收列表
+required int32 handlerId=3;
+}
+//48;//体力已经接受过了(这个人没有送给自己体力)
+message response1807
+{
+  repeated UidInfo uids=1;//处理成功的id列表
+  required int32 getEnergy=2;//获得的体力
+  required int32 energy=3;//角色当前体力
+  required int32 handlerId=4;
+}
+
+//好友申请门票  friendTicketApplyHandler
+message request1808
+{
+required string token=1;//token
+required string uid=2;//要申请id
+required int32 ticketId=3;//门票id
+required int32 handlerId=4;
+}
+//49;//每隔2小时才能申请
+message response1808
+{
+  required string uid=1;//处理成功的id
+  required int32 ticketId=2;//门票id
+  required int32 handlerId=3;
+}
+
+//好友同意送门票(批量) friendTicketAgreeHandler
+message request1809
+{
+required string token=1;//token
+repeated TicketInfo list=2;//要处理列表
+required int32 type=3;//处理类型1同意2拒绝
+required int32 handlerId=4;
+}
+message response1809
+{
+  repeated TicketInfo uids=1;//处理成功的id列表
+  required int32 type=2;//处理类型1同意2拒绝
+  required int32 handlerId=3;
+}
+//好友列表 friendListHandler
+message request1810
+{
+required string token=1;//token
+required int32 handlerId=2;
+optional int32 isRank=3;//是否用于排行1是,2否
+}
+message response1810
+{
+  repeated RoleSimpleInfo infos=1;//好友列表
+  required int64 ticketApplyTimeLeft=2;//索取门票倒计时
+  required int32 energyGot=3;//今日已经领取的体力数量
+  required int32 energyCanGetOneDay=4;//一天总共可以领取的体力
+  required int32 handlerId=5;
+}
+//接收好友送的门票(批量) friendTicketReceiveHandler
+message request1811
+{
+required string token=1;//token
+required int32 handlerId=2;
+repeated TicketInfo list=3;//要处理列表
+}
+message response1811
+{
+  repeated TicketInfo uids=1;//处理成功的id列表
+  required int32 handlerId=2;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////商店
+//商店列表  shopListHandler
+message request1901
+{
+required string token=1;//token
+required int32 handlerId=2;
+optional int32 type=3;//商店类型 1普通商店2强化几率石商店3金币商店
+}
+message response1901
+{
+  repeated ShopItem shops=1;//商店列表
+  required int32 handlerId=2;
+}
+
+//商店购买  shopBuyHandler
+message request1902
+{
+required string token=1;//token
+required int32  shopid=2;
+required int32 handlerId=3;
+}
+//58;//商品不存在5;//金钱不足6;//钻石不足
+message response1902
+{
+  required int32 shopid=1;//商店中的商品id
+  required int32 itemId=2;//物品系统id
+  optional int32 itemType=3;//物品类型
+  optional int32 costCoin=4;//扣的铜钱数
+  optional int32 costIngot=5;//扣的钻石数
+  optional int32 coin=6;//当前铜钱数量
+  optional int32 ingot=7;//当前钻石数量
+  required int32 handlerId=8;
+  optional string equipSeqid=9; // 装备唯一id
+}
+//体力购买  energyBuyHandler
+message request1903
+{
+required string token=1;//token
+required int32 handlerId=2;
+}
+// 5;//金钱不足6;//钻石不足
+message response1903
+{
+  required int32 handlerId=1;
+  optional int32 costIngot=2;//扣的钻石数
+  optional int32 nowIngot=3;//当前钻石数量
+  optional int32 nowEnergy=4;//当前体力数量
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////聊天
+//发送聊天消息  chatSendHandler
+message request2001
+{
+required string token=1;//token
+required int32  channel=2;//频道 1全体,2私聊,3工会聊天,4系统频道,5组队聊天
+required string  targetId=3;//频道对应id 1全体'0',2私聊 对方uid,3工会聊天 '0',4系统频道'0',5组队聊天
+required string text=4;//消息内容
+required int32 handlerId=5;
+}
+message response2001
+{
+  required int32 handlerId=1;
+}
+
+//推送聊天消息
+message response2002
+{
+  required int32  handlerId=1;//
+  required int32  channel=2;//频道 1全体,2私聊,3工会聊天
+  repeated ChatItem items=3;//消息内容
+}
+
+//改变世界聊天频道  chatWorldChangeSendHandler
+message request2003
+{
+required string token=1;//token
+required int32  line=2;//线路1~10,
+required int32 handlerId=3;
+}
+message response2003
+{
+  required int32 handlerId=1;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////邮箱
+//获得邮件  mailListHandler
+message request2101
+{
+required string token=1;//token
+required int32 handlerId=2;
+}
+message response2101
+{
+  repeated MailItem items=1;//邮件
+  required int32 handlerId=2;
+}
+//更改邮件状态 (群发邮件和个人邮件分开发) mailUpdateHandler
+message request2102
+{
+required string token=1;//token
+required int32 type=2;//操作类型1设为已读,2提取附件3删除邮件
+repeated MailAndType ids=3;//邮件id列表
+required int32 handlerId=4;
+}
+message response2102
+{
+  repeated AttachItem items=1;//成功提取的邮件附件
+  repeated int32 ids=2;//操作成功的邮件id
+  required int32 handlerId=3;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////签到
+//获得签到信息  signInfoHandler
+message request2201
+{
+required string token=1;//token
+required int32 handlerId=2;
+}
+message response2201
+{
+  repeated int32 signDays=1;//已签到的日期,当月的第几天(1~31)
+  repeated int32 signBacks=2;//已补签的日期(1~31)
+  repeated int32 boxs=3;//已经领取的礼包(107,114,121,128)
+  required int32 nowDay=4;//今日,如果不存在signDays&signBacks中便是可以签到
+  required int32 handlerId=5;
+}
+//签到(补签)  signDayHandler
+message request2202
+{
+required string token=1;//token
+required int32 handlerId=2;
+required int32 day=3;//要签到/补签/领取礼包(107,114,121,128)的日期
+}
+message response2202
+{
+  repeated int32 signDays=1;//已签到的日期,当月的第几天(1~31)
+  repeated int32 signBacks=2;//已补签的日期(1~31)
+  repeated int32 boxs=3;//已经领取的礼包(107,114,121,128)
+  required int32 nowDay=4;//今日,如果不存在signDays&signBacks中便是可以签到
+  repeated ItemInfo items=6;//获得的东西
+  required int32 handlerId=5;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////图鉴
+//获得图鉴信息  pokedexInfoHandler
+message request2301
+{
+required string token=1;//token
+required int32 handlerId=2;
+}
+message response2301
+{
+  repeated int32 equipIds=1;//已经获得的equipid列表
+  repeated int32 equipDraws=2;//已经领取的equipids
+  repeated int32 fishIds=3;//已经获得的鱼的id列表
+  repeated int32 fishDraws=4;//已领取的鱼的组合id列表: 组合id,组合id
+  repeated AttachItem fishGets=5;//每个大地图已经获得的鱼图鉴的数量
+  required int32 handlerId=6;
+}
+//领取装备图鉴奖励  pokedexEquipHandler
+message request2302
+{
+required string token=1;//token
+required int32 handlerId=2;
+required int32 equipId=3;//装备id
+}
+message response2302
+{
+  required int32 handlerId=1;
+  repeated ItemInfo items=2;//获得的东西
+}
+//领取鱼图鉴奖励  pokedexFishHandler
+message request2303
+{
+required string token=1;//token
+required int32 handlerId=2;
+required int32 id=3;//鱼图鉴组合id
+}
+message response2303
+{
+  required int32 handlerId=1;
+  repeated ItemInfo items=2;//获得的东西
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////新手引导
+// 更新新手引导步数信息   updateNewLeadStepHandler
+message request2401
+{
+  required string token=1; // token
+  required int32 handlerId=2;
+  required string newLeadStep = 3; // 新手引导任务   格式：任务id,是否达到引导条件,是否已引导
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////debug模式
+// debug道具 insertItemHandler
+message request2501
+{
+  required string token=1;
+  required int32 handlerId=2;
+  optional int32 coin=3; // 金币
+  optional int32 exp=4; // 经验
+  optional int32 energy=5; // 体力
+  optional int32 ingot=6; // 钻石
+  optional int32 itemId=7; // 道具id
+  optional int32 itemNum=8; // 道具数量
+  optional int32 quartz=9; // 水晶粉
+  // 大地图fishId 会直接添加到该地图的水族箱内
+  optional int32 bigMapId=10; // 大地图Id
+  optional int32 bigMapFishId=11; // 大地图鱼Id
+  // 小地图fishId 在该地图钓鱼下一条必出
+  optional int32 smallMapId=12; // 小地图id
+  optional int32 smallMapFishId=13; // 小地图鱼Id
+}
+message response2501
+{
+  required int32 handlerId=1;
+  optional string nowNum=2; // 如果为金币，体力，钻石，水晶粉，返回实时数量   如果为经验，返回格式：实时等级,实时本级经验
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////任务
+//获得任务列表  taskListHandler
+message request2601
+{
+required string token=1;//token
+required int32 handlerId=2;
+required int32 type=3;//任务类型 -1=4/5,0=1/2/3,1主线，2成就，3日常，4等级礼包，5开服七天乐
+}
+message response2601
+{
+  required int32 handlerId=1;
+  repeated TaskItem tasks=2;//任务列表
+  required int32 type=3;//任务类型
+  optional int32 startTime=4; // 开始时间（注册时间）   任务类型为开服七天乐时返回  单位为秒
+  optional int32 endTime=5; // 结束时间   任务类型为开服七天乐时返回 单位为秒
+}
+//领取任务奖励  taskRewardGetHandler
+message request2602
+{
+required string token=1;//token
+required int32 handlerId=2;
+required int32 taskId=3;//任务id
+}
+message response2602
+{
+  required int32 handlerId=1;
+  repeated ItemInfo items=2;//获得的东西
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////cdkey兑换
+//兑换cdk   cdkExchangeHandler
+message request2701
+{
+  required string token=1;//token
+  required int32 handlerId=2;//handlerId
+  required string cdkey=3;//cdkey码
+}
+// 错误码：
+//    69:错误的cdk
+//    70:激活码已使用（不共享码）
+//    71:激活码已用完（共享码）
+//    72:该用户已使用过该批次激活码
+//    73:激活码已过期
+message response2701
+{
+  required int32 handlerId=1;
+  required string rewardInfo=2;// 兑换码对应的道具  以  道具id,道具数量;道具id,道具数量....  的方式拼接
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////斗鱼pvp
+//进入斗鱼场   pvpEnterHandler
+message request2801
+{
+  required string token=1;//token
+  required int32 handlerId=2;//handlerId
+}
+
+message response2801
+{
+  required int32 handlerId=1;
+  required int32 pvpCoin=2;//斗鱼币
+  required int32 ingot=3;//钻石
+  required int32 drawCd=4;//领取斗鱼币倒计时
+}
+//开始匹配（more见2808）   pvpMatchHandler
+message request2802
+{
+  required string token=1;//token
+  required int32 handlerId=2;//handlerId
+  required int32 type=3;//场次类型1斗鱼币场2钻石场
+  required int32 times=4;//1、2、5、10倍
+}
+message response2802
+{
+  required int32 handlerId=1;
+  required int32 fishId=2;//钓鱼的id
+}
+
+//匹配成功
+message response2803
+{
+  required int32 handlerId=1;//12004
+  required PvpRoleInfo info1=2;//uid等于自己的为自身信息，否则为对手信息
+  required PvpRoleInfo info2=3;//uid等于自己的为自身信息，否则为对手信息
+}
+
+//翻牌   pvpSelectCardHandler
+message request2804
+{
+  required string token=1;//token
+  required int32 handlerId=2;//handlerId
+  required int32 pos=3;//1~8的位置
+}
+
+//牌信息
+message response2805
+{
+  required int32 handlerId=1;//12005
+  optional PvpCardInfo info=2;//最新一次翻牌信息
+}
+//战斗开始   pvpStartFightHandler
+message request2806
+{
+  required string token=1;//token
+  required int32 handlerId=2;//handlerId
+}
+
+message response2806
+{
+  required int32 handlerId=1;//
+}
+
+//领取赌斗币   pvpCoinGetHandler
+message request2807
+{
+  required string token=1;//token
+  required int32 handlerId=2;//handlerId
+}
+message response2807
+{
+  required int32 handlerId=1;
+  required int32 pvpCoin=2;//赌斗币总额
+}
+//如果32秒内没有开始战斗，强制开始   pvpForceStartHandler
+message request2808
+{
+  required string token=1;//token
+  required int32 handlerId=2;//handlerId
+}
+//结算   pvpClearHandler
+message request2809
+{
+  required string token=1;//token
+  required int32 interval1=2;//间隔
+  required int32 interval2=3;//间隔
+  required int32 maxHurt=4;//最大伤害
+  required int32 clickNum=5;//连击数
+  required int32 isSucces=6;//是否钓鱼成功 0失败 1成功
+  required int32 handlerId=7;//handlerId
+}
+message response2809
+{
+  required int32 handlerId=1;//
+  required PvpFishIdInfo info=2;//
+}
+
+//赌斗结果 pvpResultHandler
+message response2810
+{
+  required int32 handlerId=1;//12006
+  required string winner=2;//赢方uid （如果是-1，代表平局，返回双方的钱。）
+  required int32 winType=3;//赢的类型（103钻石，107赌斗币）
+  required int32 winNum=4;//赢的数量
+}
+
+//loading成功   pvpLoadingSuccessHandler
+message request2811
+{
+  required string token=1;//token
+  required int32 handlerId=2;//handlerId
+}
+
+//对方的loading已经ok
+message response2812
+{
+  required int32 handlerId=1;//12007
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//pvp结算信息
+message PvpFishIdInfo
+{
+required int32  score=1;//鱼评分
+required int32  weight=2;//鱼重量
+required int32 fid=3;//鱼id
+required string  uid=4;//uid,根据这个判断是谁的
+}
+
+//pvp翻牌信息
+message PvpCardInfo
+{
+required int32  pos=1;//牌的位置
+required int32 id=2;//牌id
+required string  uid=3;//uid,根据这个判断是谁的
+}
+//pvp角色信息
+message PvpRoleInfo
+{
+optional string  uid=1;//uid,如果为空，请前端随机名字和头像
+required string name=2;//名字
+required int32 power=3;//战斗力
+required int32 win=4;//胜利场次
+required int32 all=5;//总场次
+}
+
+//任务内容
+message TaskItem
+{
+required int32  id=1;//任务id
+repeated NeedItem attaches=2;//任务需求完成情况
+required int32  status=3;//任务状态1未完成2已完成3已领取
+}
+//任务需求完成情况
+message NeedItem
+{
+required string id=1;//type+"_"+id+"_"+subId;
+required int32 num=2;//已完成数量数量
+}
+
+//邮件内容
+message MailItem
+{
+required string  title=1;//消息主题
+required string senderName=2;//消息发送者
+required string text=3;//消息内容
+optional int32 expires=4;//距离过期的剩余时间(单位是秒)
+required int32 type=5;//1群发邮件,2个人邮件
+required int32 status=6;//是否已打开（0：未打开；1：已打开；2：已提取附件;3:已删除）
+repeated AttachItem attaches=7;//附件
+required int32 id=8;//邮件id
+}
+//邮件附件内容
+message AttachItem
+{
+required int32 id=1;//id
+required int32 num=2;//数量
+}
+
+//邮件id+类型
+message MailAndType
+{
+required int32 id=1;//id
+required int32 type=2;//类型1群发邮件,2个人邮件
+}
+
+
+//聊天消息体
+message ChatItem
+{
+required string  targetId=1;//频道对应id 1全体'0',2私聊 对方uid,3工会聊天 '0'
+required int64 time=2;//时间
+required string text=3;//消息内容
+optional int32 pic=4;//玩家头像
+required string name=5;//玩家名字
+}
+
+//商店信息
+message ShopItem
+{
+required int32 id=1;//shopitemId
+required int32 itemId=2;//物品系统id
+optional int32 itemType=3;//物品类型
+optional int32 payType=4;//支付类型 102铜币,103钻石
+optional int32 price=5;//价格
+optional int32 discount=6;//打几折
+optional int32 itemOrder=7;//顺序
+}
+
+
+//------------------------------------------------------------------------------
+//角色对象
+message RoleInfo
+{
+required string name=2;//姓名
+optional int32 sex=3;//性别
+optional int32 level=4;//等级
+optional int32 energy=5;//体力
+optional int32 fatigue=6;//疲劳度
+optional int32 lucky=7;//幸运值
+optional int32 coin=8;//铜钱
+optional int32 ingot=9;//元宝
+optional int32 quartz=10;//粉尘剩余数
+optional int32 mapId=11;//渔场id
+optional int32 fishId=12;//鱼IDhh
+optional int64 energyResume=13;//体力恢复
+optional int32 exp=14;//经验
+optional int32 ticketsSanya=15;//三亚门票
+optional int32 ticketsYamaxun=16;//亚马逊门票
+optional int32 ticketsMaoliqiusi=17;//毛里求斯门票
+optional int32 ticketsMixixibi=18;//密西西比河门票
+optional int32 ticketsMaerdaifu=19;//马尔代夫门票
+optional int32 inlay1=20;//5%强化券数量
+optional int32 inlay2=21;//10%强化券数量
+optional int32 inlay3=22;//20%强化券数量
+optional int32 pic=23;//头像
+optional int32 friendMsgCount=24; // 好友消息提示
+optional int32 mailMsgCount=25; // 邮箱消息提示
+optional int32 signMsgCount=26; // 签到消息提示
+optional int32 rankMsgCount = 27; // 排行消息提示
+optional int64 fishCount=28;// 钓鱼场数
+optional string newLeadStep=29; // 新手引导
+optional string energyBuy=30; // 已经购买体力的次数
+}
+//角色属性
+message RoleAttr
+{
+required double attectFresh   = 1;  //淡水鱼攻击  =  装备（鱼竿）+装备（鱼线）+装备饰品
+required double attactSea    =2 ;  //海水鱼攻击 =  装备（鱼竿）+装备（鱼线）+装备饰品
+required double fishlineEffect   =3 ;  //鱼线效率 =  装备（卷线轮）
+required double fishlineLength  =4 ;  //鱼线长度 =  人物升级+装备（卷线轮）
+required double bigfishRate =5 ;  //大鱼概率 =  珍珠（太湖珠）+药水（大鱼药水）+鱼饵+初始值
+required double rarefishRate  =6 ;  //稀有鱼概率 =  珍珠（太湖珠）+药水（稀有鱼药水）+鱼饵+初始值
+required double bossfishRate   =7 ;  //Boss鱼概率 =  初始值
+required double powerRate = 8;  //能量回复率 =  珍珠（夜明珠）+初始值
+required double critRate =9 ;  //暴击率 =  珍珠（东珠）+药水（暴击药水）+初始值
+required double critHurt  =10 ;  //暴击伤害 =  珍珠（南洋珠）+初始值
+required double hitRate =11 ;  //命中率 =  珍珠（日本珠）+初始值
+required double coinRate =12 ;  //金币概率 =  初始值+药水（金币）+地图（该部分增加不显示在人物属性上）
+required double hurtAdd = 13;  //伤害加成 =  人物升级+珍珠（溪地珠）+装备饰品
+required double hurtMultiple = 14;  //伤害倍率 =  珍珠（琵琶珠）+装备饰品+药水（伤害药水）+初始值
+required double skillHurtMultiple =15 ;  //技能伤害倍率 =  初始值
+required double tenacityLimit  =16 ;  //韧性上限 =  初始值
+required double expMultiple  =17 ;  //经验倍率 =  药水（经验药水）
+required double coinMultiple = 18;  //金币倍率 =  药水（金币药水）
+required double growthMutiple = 19;  //成长倍率 =  初始值+水族箱饰品
+required double weigthMax  = 20;  //当前玩家钓过的最大重量
+required double mapHurtRateSanya  = 21;////三亚伤害倍率：影响三亚鱼的最终伤害；（基准1000）
+required double mapHurtRateAmazon =22 ;// = ;//亚马逊伤害倍率：影响亚马逊的最终伤害；（基准1000）
+required double mapHurtRateMao  =23 ;////毛里求斯伤害倍率：影响毛里求斯的最终伤害；（基准1000
+required double mapHurtRateMis  =24 ;////密西西比伤害倍率：影响密西西比鱼的最终伤害；（基准1000）
+required double mapHurtRateMaldive  =25 ;////马尔代夫伤害倍率：影响马尔代夫鱼的最终伤害；（基准1000）
+required double mapHurtAddSanya  = 26;////三亚伤害加成：影响三亚鱼的最终伤害；（基准0）
+required double mapHurtAddAmazon  =27 ;////亚马逊伤害加成：影响亚马逊的最终伤害；（基准0）
+required double mapHurtAddMao  = 28;////毛里求斯伤害加成：影响毛里求斯的最终伤害；（基准0）
+required double mapHurtAddMis =29 ;// = ;//密西西比伤害加成：影响密西西比鱼的最终伤害；（基准0）
+required double mapHurtAddMaldive  = 30 ;////马尔代夫伤害加成：影响马尔代夫鱼的最终伤害；（基准0）
+required double power  = 31 ;//战斗力
+required double totalWeight  = 32 ;//钓过鱼的总重量
+}
+
+
+//角色简单信息
+message RoleSimpleInfo
+{
+required string uid=1;//id
+required string name=2;//名字
+optional int32 level=3;//等级
+optional int32 power=4;//战斗力
+optional int64 updateTime=5;//上次在线时间
+optional int32 pic=6;//头像
+optional int32 ticketId=7;//请求赠票Id
+optional int32 energyGived=8;//今天是否接收了这个人体力1是2否
+optional int32 energyRecieved=9;//这个人是否送给了自己体力1是2否
+optional int32 maxFish=10;//最大鱼
+optional int32 ingot=11;//钻石个数
+optional int32 coin=12;//金币个数
+optional int32 totalWeight=13;//钓过鱼的总重量
+optional int32 friendEnergy=14;//今天是否赠送了这个人体力1是2否
+optional int32 ticketReceivedId=15;//收到此人赠票的id
+}
+
+
+//水族箱
+message RoleAquarium
+{
+required string id=1;//id
+optional int32 aquariumId=2;//水族箱ID
+optional int32 capacity=3;//容量
+optional int32 level=4;//水族箱等级
+repeated RoleFish fishList=5;//鱼列表
+optional int32 fishNum=6;//鱼的数量
+required int32 rate=7;//当前在该水族箱中鱼的成长率
+}
+//水族箱饰品
+message RoleDecoration
+{
+repeated RoleDecorationItem d1=1;//水草
+repeated RoleDecorationItem d2=2;//沉木
+repeated RoleDecorationItem d3=3;//鹅卵石
+repeated RoleDecorationItem d4=4;//过滤器
+repeated RoleDecorationUsing using=5;//正在使用中水草[{t=1草2木3石4过滤器q=品质,t=开始使用时间}]
+}
+//水族箱饰品--item
+message RoleDecorationItem
+{
+required int32 quality=1;//品质
+required int32 time=2;//可用总时间
+}
+
+//鱼排行item--item
+message FishRankItem
+{
+required string name=1;//名字
+optional string uid=2;//
+optional int64 time=3;//获得时间
+required int32 weight=4;//重量
+optional int32 pic=5;//头像
+}
+
+
+//水族箱饰品--正在使用
+message RoleDecorationUsing
+{
+required int32 type=1;//类型
+required int32 quality=2;//品质
+required int64 time=3;//已经使用多少时间
+}
+//Item
+message ItemInfo
+{
+required int32 id=1;//id
+required int32 num=2;//数量
+}
+
+//送票
+message TicketInfo
+{
+required string uid=1;//id
+required int32 ticketId=2;//门票id
+}
+//Uid
+message UidInfo
+{
+required string uid=1;//id
+optional string info=2;//其它信息
+}
+
+//装备 鱼竿 卷线轮 鱼线
+message RoleEquip
+{
+required string id=1;//装备唯一id
+optional int32 equipId=2;//装备id
+optional int32 isWear=3;//是否装备
+optional int32 durable=4;//耐久
+optional int32 level=5;//强化等级
+optional string strengthInfo=6;//强化信息
+optional string insertInfo=7;//镶嵌信息
+optional int32 position=8;//位置
+optional string refinetInfo=9;//洗练信息(lid,pid;...)
+}
+
+//鱼
+message RoleFish
+{
+required string id=1;//鱼唯一id
+optional int32 fid=2;//鱼id
+optional int32 weight=3;//当前体重
+optional int32 time=4;//上次结算时间
+optional int32 coin=5;//累积的金币,这里指时间成长的金币,最终金币计算=钓起时重量*6+coin
+optional int32 mapid=6;//从哪里捕捞的
+optional int32 createtime=7;//出生时间
+optional int32 maturetime=8;//成熟剩余时间(秒数)
+optional int32 rate=9;//鱼的金币倍率
+}
+//宝石
+message RoleGem
+{
+required string id=1;//宝石唯一id
+optional int32 gemId=2;//宝石id
+optional int32 num=3;//数量
+optional int32 position=4;//位置
+}
+//道具 药水,鱼饵
+message RoleItem
+{
+required string id=1;//唯一id
+optional int32 itemId=2;//道具id
+optional int32 itemNum=3;//道具数量
+optional int32 isWear=4;//是否装备
+}
+//饰品
+message RoleOrnament
+{
+required string id=1;//饰品id
+optional int32 level=2;//饰品品阶
+optional int32 addition1=3;
+optional int32 addition2=4;
+optional int32 addition3=5;
+optional int32 addition4=6;
+}
+
+
+message RoleInfo1
+{
+ required string name=2;//
+ required int32 sex=3;//
+ required int32 level=4;//
+}
+

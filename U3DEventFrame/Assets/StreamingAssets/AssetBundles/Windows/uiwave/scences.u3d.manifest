@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 2813209886
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5165bd501405b899902679de4c90348f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
+HashAppended: 0
+ClassTypes: []
+Assets:
+- Assets/Art/Scences/UIWave/Scences/UIWave.unity
+Dependencies:
+- D:/Unity3d/TeachRPG/AssetBundles/Windows/scencerpg/npc.ld
+- D:/Unity3d/TeachRPG/AssetBundles/Windows/uibatch/texture.ld
+- D:/Unity3d/TeachRPG/AssetBundles/Windows/uiwave/shader.ld

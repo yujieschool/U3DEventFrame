@@ -1,0 +1,17 @@
+ManifestFileVersion: 0
+CRC: 1191870490
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5bc965f74218e3ab2a40f4596dd91dc0
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
+HashAppended: 0
+ClassTypes: []
+Assets:
+- Assets/Art/Scences/Demo/Scences/Demo.unity
+- Assets/Art/Scences/Demo/Scences/Test.unity
+- Assets/Art/Scences/Demo/Scences/LuaDemo.unity
+Dependencies:
+- D:/Unity3d/TeachRPG/AssetBundles/Windows/demo.ld
